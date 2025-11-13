@@ -1,0 +1,127 @@
+/* sivun teeman värit */
+:root{
+  --bg: #0f1117;
+  --panel: rgba(255,255,255,0.06);
+  --panel-2: rgba(255,255,255,0.085);
+  --text: #e6e8ef;
+  --muted: #a8b0be;
+  --brand: #5da1ff;
+  --brand-2: #3e82ff;
+  --ring: rgba(93,161,255,.35);
+  --danger: #ff6b6b;
+}
+/* boxin koko ja bodyn/html pakottaminen koko ruudulle */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+/* sivun tuastan asetuksia */
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color: var(--text);
+  background:
+    radial-gradient(1200px 400px at 50% -10%, #182032 0%, transparent 60%),
+    linear-gradient(180deg, #0e1016, #0b0d13 55%, #0a0c12);
+}
+/* sivun päämuotoilua */
+.wrap{
+  min-height: 100%;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
+  gap: 32px;
+  padding: 48px 16px 32px;
+}
+
+/* otsikkoalue */
+.hero{ text-align:center; max-width: 800px; }
+.hero h1{ margin:0 0 .4rem; font-size: clamp(28px, 4vw, 40px); }
+.hero p{ color: var(--muted); margin:0; }
+
+/* hakualue ja palkki */
+.search-area{ width: 100%; max-width: 820px; }
+
+.search-bar{
+  display:flex; gap: 12px; align-items:center;
+  background: var(--panel);
+  padding: 10px;
+  border-radius: 18px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25), inset 0 0 0 1px var(--panel-2);
+}
+/* hakukenttä */
+.search-bar input{
+  flex:1;
+  background: rgba(255,255,255,.06);
+  border: none;
+  color: var(--text);
+  font-size: 16px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  outline: none;
+}
+.search-bar input:focus{ box-shadow: 0 0 0 6px var(--ring); }
+
+/* haku nappi */
+.btn{
+  appearance:none; border: none;
+  padding: 12px 18px; border-radius: 14px;
+  color: white;
+  background: linear-gradient(180deg, var(--brand), var(--brand-2));
+  font-weight: 600; cursor: pointer;
+  transition: transform .1s ease, box-shadow .2s ease, opacity .2s;
+  box-shadow: 0 8px 20px rgba(62,130,255,.35);
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn:active{ transform: translateY(0); }
+
+/* virheilmoitus */
+#error{ min-height: 22px; margin-top: 8px; color: var(--danger); }
+
+/* tulos */
+.card{
+  width: 100%; max-width: 820px;
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));
+  border-radius: 22px; padding: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.08);
+  transition: transform .25s ease, opacity .25s ease;
+}
+.piilossa{ display:none; }
+
+/* kortin yläosa eli logo */
+.card-header{
+  display:flex; align-items:center; gap: 16px; margin-bottom: 12px;
+}
+.logo{
+  width:72px; height:72px; display:grid; place-items:center;
+  background: rgba(255,255,255,.06);
+  border-radius: 16px; overflow:hidden; border: 1px solid var(--panel-2);
+}
+.logo img{ width:100%; height:100%; object-fit: contain; }
+
+/* yrityksen nimi  ja symboli */
+.title{ display:flex; align-items:center; gap: 10px; }
+.title h2{ margin:0; font-size: clamp(20px, 3vw, 28px); }
+.chip{
+  display:inline-block; padding: 6px 10px; border-radius: 999px;
+  background: rgba(93,161,255,.18); border:1px solid rgba(93,161,255,.35);
+  color: #cfe1ff; font-weight: 600; font-size: 13px;
+}
+
+/* tietojen gridi */
+.grid{
+  display:grid; grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px; margin-top: 10px;
+}
+.field{ background: rgba(255,255,255,.04); border: 1px solid var(--panel-2); border-radius: 14px; padding: 12px 14px; }
+.field.large{ grid-column: span 2; }
+.label{ display:block; color: var(--muted); font-size: 12px; margin-bottom: 4px; }
+.price{ font-size: 22px; font-weight: 700; }
+
+/* yrityksen kuvaus */
+.desc{ margin-top: 14px; background: rgba(255,255,255,.04); border:1px solid var(--panel-2); border-radius: 14px; padding: 10px 14px; }
+.desc summary{ cursor:pointer; color: var(--muted); font-weight: 600; margin-bottom: 6px; }
+
+/* footteri */
+.footer{ margin-top: 8px; color: var(--muted); }
+.footer a{ color: #c9b8ff; }

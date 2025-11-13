@@ -9,7 +9,7 @@ Ajax proju APIa hyödyntäen
 
 ## Verkkolinkit
 Julkaistu sovellus: https://example.netlify.app  
-Videoesittely: https://youtube.com/yourvideo  
+Videoesittely: 
 
 ---
 

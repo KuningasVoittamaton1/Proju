@@ -8,9 +8,9 @@ Ajax proju APIa hyödyntäen 2.0 ulkoisten kirjastojen avulla
 ---
 
 ## Verkkolinkit
-Julkaistu sovellus: 
-Videoesittely: 
-
+Julkaistu sovellus: https://kuningasvoittamaton1.github.io/Proju/osakehaku
+Videoesittely: https://video.laurea.fi/media/osakehaku-esittely/0_p03ou14c
+Github: https://github.com/KuningasVoittamaton1/Proju
 ---
 
 # Työn jakautuminen

@@ -1,14 +1,14 @@
 # Proju
-Ajax proju APIa hyödyntäen
+Ajax proju APIa hyödyntäen 2.0 ulkoisten kirjastojen avulla
 
 
-# Projektin nimi: Osakehaku  
+# Projektin nimi: Osakehaku 2.0 käyttäen ulkoisia kirjastoja
 **Tekijä:** Atte Liikanen
 
 ---
 
 ## Verkkolinkit
-Julkaistu sovellus: https://example.netlify.app  
+Julkaistu sovellus: 
 Videoesittely: 
 
 ---
@@ -21,37 +21,25 @@ Suoritin projektin teon yksin
 # Oma arvio työstä ja osaamisen kehittymisestä
 
 **Mielestäni onnistuin:**  
-- AJAX-kutsujen tekemisessä  
-- Ulkoasun rakentamisessa jossakin määrin 
-- Dynaamisten tapahtumien lisäämisessä  
-- API-datan käyttämisessä
+- Lisäämään toiminnallisuutta ulkoisten kirjastojen avulla
 
 **Parantamista olisi:**  
-- Koodin optimoinnissa  
-- Toiminnallisuuksissa (enemmän niitä) 
-- Muotoilussa (siinä piti hyödyntää hieman tekoälyä kun en löytänyt kaikkea muuten järkevästi)
+- Vielä olisi saanut olla enemmän toiminnallisuuksia mutta meni niin vaikeaksi että ei oma osaaminen riittänyt enään
 
 **Sovelluksesta jäi puuttumaan:**  
-- graafinen pörssihistoria sen vaikeuden vuoksi
-- lukujen välit kuten osakevaihdossa kymmenien- ja satojentuhansien välit (100 000) koska en saanut sitä järkevästi toimimaan
+- graafinen pörssihistoria sen vaikeuden vuoksi vieläkin, tämän kanssa taistelin monta tuntia enkä saanut oman näköiseksi tehtyä enkä täysin edes ymmärtänyt miten olisin saanut sen järkevästi tehtyä
 
 **Koen, että olen oppinut:**  
-- AJAX-pyyntöjen ja API-datan käyttöä  
-- CSS:n käyttöä sivun ulkonäön rakentamisessa 
-- DOM-manipulaation käyttöä ilman kirjastoja  
-- Projektin julkaisemisen GitHubissa ja Netlifyssä
+- Sen että ulkoisten kirjastojen avulla saa yllättävän helpolla huomattavasti hienomman näköistä ja paremmin toimivaa sivua tehtyä
 
 
 **Arvioisin työni:**  
-4/10 pistettä (ehkä plussia jos ehdin tekemään sairastumisesta huolimatta)
+6/10 pistettä
 
 ---
 
 # Palaute opettajalle
-Kurssi on ollut erittäin hyvä niinkuin sinun kurssisi aina! Olen huomannut että panostat hyvin paljon tekemiseesi 
-ja siksi olen nauttinut kaikista kursseistasi todella paljon! Kiitos siitä!
-Tällä kyseisellä kurssilla lähiopetus on osaksi ollut hyödyllistä minulle, 
-mutta en omista keskittymisvaikeuksista johtuen pysty oikeen tunnilla tekemään joten olen jättänyt niitä väliin.
+Kurssi on ollut edelleen erittäin hyvä niinkuin sinun kurssisi aina!
 
 ---
 
@@ -74,19 +62,20 @@ Financial Modeling Prep -rajapinnasta APIa käyttäen.
 Sovellus:
 - hakee yrityksen perustiedot (nimi, symboli, ala, pörssi, valuutta)  
 - näyttää hinnan ja vaihdon  
-- tukee AJAX-pyyntöjä ilman kirjastoja  
+- tukee AJAX-pyyntöjä ulkoisten kirjastojen avulla 
 - sisältää modernin, tumman käyttöliittymän  
 - lisää tapahtumankäsittelijät dynaamisesti  
 
 ---
 
 # Tunnetut virheet/bugit
-- Joidenkin symbolien kohdalla logo ei ole saatavilla  
-- Yrityksen kuvaus boxin avattaessa footer tms tulee tekstin päälle (en tiedä miten sen saisi korjattua)
+
 
 ---
 
 # Kuvakaappaukset
+
+Kuvakaappausta ei vieläkään saa lisättyä sen koon vuoksi
 
 EN SAA KUVAKAAPPAUSTA LISÄTTYÄ SIVULLE KOSKA SE EI TÄYTÄ MINIMI MP KOKOA: 
 1 file did not meet the minimum size
@@ -110,10 +99,12 @@ Käytetyt teknologiat ja niiden rooli:
 
 | Teknologia | Tarkoitus |
 |-----------|-----------|
-| **HTML5** | Sivun rakenne ja elementit |
-| **CSS3** | Tumma ulkoasu ja animaatiot |
-| **JavaScript (native)** | AJAX-kutsut, DOM-manipulaatio, dynaamiset event handlerit |
-| **XMLHttpRequest** | API-kyselyt ilman kirjastoja |
-| **Netlify** | Julkaisu |
-| **GitHub** | Versionhallinta ja repositorio |
+| **HTML5** | Sivun perusrakenne ja hakulomake |
+| **CSS3** | Tumma ulkoasu, animaatiot ja skeleton-loader |
+| **JavaScript (ES6)** | Sovelluslogiikka, tilan hallinta (esim. edelliset hinnat), API-kutsujen ja DOM-päivitysten ohjaus |
+| **jQuery** | Lomakkeen ja nappien tapahtumankäsittely, DOM-manipulaatio |
+| **Axios** | AJAX-/HTTP-kutsut Financial Modeling Prep -rajapintaan |
+| **Bootstrap 5** | Perus UI-komponentit (mm. lataus merkki) ja responsiivinen layout |
+| **Financial Modeling Prep API** | Osakkeiden perustiedot ja hinnat symbolin perusteella |
+| **GitHub** | Versionhallinta ja projektin lähdekoodirepositorio |
 

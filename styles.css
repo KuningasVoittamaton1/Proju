@@ -14,15 +14,28 @@
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 
-/* sivun tuastan asetuksia */
+/* sivun taustan asetuksia */
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   color: var(--text);
-  background:
-    radial-gradient(1200px 400px at 50% -10%, #182032 0%, transparent 60%),
-    linear-gradient(180deg, #0e1016, #0b0d13 55%, #0a0c12);
+  background-color: #0b0d13;
+  position: relative;
 }
+
+/* zoomauksen rikkomisen esto */
+body::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: radial-gradient(circle at 50% 0%, rgba(35,50,80,0.6), transparent 70%);
+  pointer-events:none;
+  z-index:-1;
+}
+
 /* sivun päämuotoilua */
 .wrap{
   min-height: 100%;
@@ -75,8 +88,43 @@ body{
 .btn:hover{ transform: translateY(-1px); }
 .btn:active{ transform: translateY(0); }
 
+/* esimerkkisymbolien valinta */
+.quick-symbols{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:6px;
+  margin-top:8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.quick-label{
+  opacity:0.9;
+}
+.quick-btn{
+  border:none;
+  border-radius:999px;
+  padding:4px 10px;
+  background: rgba(255,255,255,0.06);
+  color:#dbe4ff;
+  cursor:pointer;
+  font-size:0.8rem;
+  transition: background .15s ease, transform .1s ease;
+}
+.quick-btn:hover{
+  background: rgba(93,161,255,0.35);
+  transform: translateY(-1px);
+}
+
 /* virheilmoitus */
 #error{ min-height: 22px; margin-top: 8px; color: var(--danger); }
+
+/* API-kutsujen laskuri */
+.api-count{
+  margin-top:4px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
 
 /* tulos */
 .card{
@@ -85,8 +133,34 @@ body{
   border-radius: 22px; padding: 20px;
   box-shadow: 0 15px 40px rgba(0,0,0,.35), inset 0 0 0 1px rgba(255,255,255,.08);
   transition: transform .25s ease, opacity .25s ease;
+  opacity:0;
+  transform: translateY(8px);
+  color:#eef2ff;
+  position:relative;
+}
+.card-visible{
+  opacity:1;
+  transform: translateY(0);
 }
 .piilossa{ display:none; }
+
+/* skeleton-loader kortille */
+.card.skeleton::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background: linear-gradient(110deg,
+    transparent 0%,
+    rgba(255,255,255,0.15) 40%,
+    transparent 80%);
+  animation: skeleton-shimmer 1.2s infinite;
+  pointer-events:none;
+}
+@keyframes skeleton-shimmer{
+  from{ transform: translateX(-100%); }
+  to{ transform: translateX(100%); }
+}
 
 /* kortin yläosa eli logo */
 .card-header{
@@ -100,7 +174,7 @@ body{
 .logo img{ width:100%; height:100%; object-fit: contain; }
 
 /* yrityksen nimi  ja symboli */
-.title{ display:flex; align-items:center; gap: 10px; }
+.title{ display:flex; align-items:center; gap: 10px; flex-wrap:wrap; }
 .title h2{ margin:0; font-size: clamp(20px, 3vw, 28px); }
 .chip{
   display:inline-block; padding: 6px 10px; border-radius: 999px;
@@ -115,13 +189,36 @@ body{
 }
 .field{ background: rgba(255,255,255,.04); border: 1px solid var(--panel-2); border-radius: 14px; padding: 12px 14px; }
 .field.large{ grid-column: span 2; }
-.label{ display:block; color: var(--muted); font-size: 12px; margin-bottom: 4px; }
-.price{ font-size: 22px; font-weight: 700; }
+.label{ display:block; color: #cdd5e0; font-size: 12px; margin-bottom: 4px; }
+.field span{ color:#f5f7ff; }
+
+/* hinta + muutos */
+.price{ font-size: 22px; font-weight: 700; display:block; }
+.price-change{
+  display:block;
+  margin-top:2px;
+  font-size:0.8rem;
+  color: var(--muted);
+}
+.price-up{ color:#4ade80; }
+.price-down{ color:#fb7185; }
+.price-neutral{ color:#e6e8ef; }
 
 /* yrityksen kuvaus */
 .desc{ margin-top: 14px; background: rgba(255,255,255,.04); border:1px solid var(--panel-2); border-radius: 14px; padding: 10px 14px; }
-.desc summary{ cursor:pointer; color: var(--muted); font-weight: 600; margin-bottom: 6px; }
+.desc summary{ cursor:pointer; color: #d7def0; font-weight: 600; margin-bottom: 6px; }
+.desc p{ color:#e4e8f3; }
 
 /* footteri */
 .footer{ margin-top: 8px; color: var(--muted); }
 .footer a{ color: #c9b8ff; }
+
+/* responsiivisuus */
+@media (max-width: 600px){
+  .grid{
+    grid-template-columns: 1fr;
+  }
+  .field.large{
+    grid-column: span 1;
+  }
+}

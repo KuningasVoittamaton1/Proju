@@ -108,3 +108,31 @@ Käytetyt teknologiat ja niiden rooli:
 | **Financial Modeling Prep API** | Osakkeiden perustiedot ja hinnat symbolin perusteella |
 | **GitHub** | Versionhallinta ja projektin lähdekoodirepositorio |
 
+
+
+Lähteet:
+jQuery 
+https://api.jquery.com/
+
+Axios
+https://axios-http.com/
+
+Financial Modeling Prep API
+https://site.financialmodelingprep.com/developer/docs
+
+Bootstrap 5
+https://getbootstrap.com/
+
+MDN Web Docs (JavaScript, CSS, Web API:t)
+https://developer.mozilla.org/
+
+CSS Gradient
+https://cssgradient.io/
+
+Stack Overflow
+https://stackoverflow.com/
+
+W3C
+https://www.w3.org/standards/webdesign/htmlcss
+
+Tekoälyä (chatgpt) myös joissain kohdissa hyödynnetty tiedon etsintään tai ongelman selvitykseen.
